@@ -63,7 +63,6 @@ function hoverStart(e){
 
     // extra credit
     let backgroundColor = square.style.backgroundColor;
-    console.log(backgroundColor);
 
     // if the square has not been touched, give it a new random background color with 10% opacity
     if(backgroundColor === ''){
