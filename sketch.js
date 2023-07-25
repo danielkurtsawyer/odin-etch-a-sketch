@@ -60,7 +60,6 @@ function createNewGrid(numSides){
 
 function hoverStart(e){
     const square = e.target;
-    square.classList.add('hover');
 
     // extra credit
     let backgroundColor = square.style.backgroundColor;
