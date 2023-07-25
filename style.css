@@ -1,5 +1,5 @@
 body {
-    background-color:lightskyblue;
+    background-color:red;
 }
 
 button {
@@ -17,11 +17,13 @@ button {
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;
-    border: 1px solid black;
+    border: 5px solid black;
+    background-color: white;
 }
 
 .square {
     flex: 1 1 5.625vh;
     border: 1px solid black;
     box-sizing: border-box;
+    background-color: white;
 }
