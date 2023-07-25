@@ -2,9 +2,16 @@ body {
     background-color:lightskyblue;
 }
 
+button {
+    margin: 10px auto;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 .grid {
-    height: 96vh;
-    width: 96vh;
+    height: 90vh;
+    width: 90vh;
     margin: auto;
     padding: 0px;
     display: flex;
@@ -14,7 +21,7 @@ body {
 }
 
 .square {
-    flex: 1 1 6vh;
+    flex: 1 1 5.625vh;
     border: 1px solid black;
     box-sizing: border-box;
 }
