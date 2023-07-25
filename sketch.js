@@ -62,9 +62,38 @@ function hoverStart(e){
     const square = e.target;
     square.classList.add('hover');
 
-   
+    // extra credit
+    let backgroundColor = square.style.backgroundColor;
+    console.log(backgroundColor);
+
+    // if the square has not been touched, give it a new random background color with 10% opacity
+    if(backgroundColor === ''){
+        backgroundColor = getRandomBackgroundColor();
+        square.style.backgroundColor = backgroundColor;
+        // return early so the square doesn't get darkened since getRandomBackgroundColor initially sets alpha to .1
+        return;
+    }
+
+    // if the square was previously touched, darken the square by 10%
+    darken(square, backgroundColor);
 }
 
 
+function getRandomBackgroundColor(square){
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
 
+    return `rgba(${r}, ${g}, ${b}, 0.1)`;
+}
 
+function darken(square, backgroundColor){
+    // if the 3rd index of the string isn't a, then the color is fully opaque, so we don't need to do anything
+    if(backgroundColor[3] !== 'a') return;
+    // extract the alpha value
+    let alpha = +backgroundColor.substr(-4, 3);  
+    alpha = (alpha * 10 + 1)/10;
+
+    let newBackgroundColor = backgroundColor.slice(0, -4).concat(alpha.toString(), ')');
+    square.style.backgroundColor = newBackgroundColor;    
+}
