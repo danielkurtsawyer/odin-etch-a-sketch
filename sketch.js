@@ -28,7 +28,7 @@ function changeNumberOfSquaresPerSide(){
     }
 
     clearGrid();
-    // editSquareRule(numSides);
+    editSquareRule(numSides);
     // createNewGrid(numSides);
 }
 
@@ -38,6 +38,11 @@ function clearGrid(){
         child.remove();
         child = grid.firstChild;
     }
+}
+
+function editSquareRule(numSides){
+    sheet.deleteRule(3);
+    sheet.insertRule(`.square {flex: 1 1 ${90/numSides}vh; border: 1px solid black; box-sizing: border-box;}`, 3);
 }
 
 function hoverStart(e){
